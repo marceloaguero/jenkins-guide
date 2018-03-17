@@ -76,13 +76,13 @@ pipeline {
             }
         }
         // JUnit reports and artifacts saving
-        stage('REPORTS') {
-            steps {
-                junit 'reports.xml'
-                archiveArtifacts(artifacts: 'reports.xml', allowEmptyArchive: true)
-                archiveArtifacts(artifacts: 'nodeapp-prod-golden.tar.gz', allowEmptyArchive: true)
-            }
-        }
+        // stage('REPORTS') {
+        //     steps {
+        //         junit 'reports.xml'
+        //         archiveArtifacts(artifacts: 'reports.xml', allowEmptyArchive: true)
+        //         archiveArtifacts(artifacts: 'nodeapp-prod-golden.tar.gz', allowEmptyArchive: true)
+        //     }
+        // }
         // Doing containers clean-up to avoid conflicts in future builds
         stage('CLEAN-UP') {
             steps {
