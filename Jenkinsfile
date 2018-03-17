@@ -5,7 +5,7 @@ pipeline {
     agent any
     stages {
         // Init env
-        stage ('CLEAN') {
+        stage('CLEAN') {
             sh 'docker stop nodeapp-dev test-image'
             sh 'docker rm nodeapp-dev test-image'
         }
