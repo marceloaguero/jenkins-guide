@@ -4,6 +4,11 @@ pipeline {
     }
     agent any
     stages {
+        // Init env
+        stage ('INIT') {
+            sh 'docker stop nodeapp-dev test-image'
+            sh 'docker rm nodeapp-dev test-image'
+        }
         // Building your Test Images
         stage('BUILD') {
             parallel {
